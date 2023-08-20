@@ -1,6 +1,6 @@
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import Image from "next/image";
-import profilePic from "../public/photos/me.jpg";
+import caleb from "../public/photos/caleb.jpg";
 import { AiFillTwitterCircle, AiFillLinkedin } from "react-icons/ai";
 import DarkModeSwitcher from "./DarkModeSwitcher.jsx";
 
@@ -27,7 +27,7 @@ const Personal = () => {
         <AiFillTwitterCircle />
       </div>
       <div className="relative bg-white mx-auto w-40 h-40 rounded-full overflow-hidden">
-        <Image alt="caleb in yosemite" src={profilePic} objectFit="cover" />
+        <Image alt="caleb in yosemite" src={caleb} objectFit="cover" />
       </div>
     </>
   );
