@@ -40,20 +40,6 @@ const Experience = () => {
             <li></li>
           </ul>
         </div>
-        <div className="text-center shadow-lg p-10 rounded-xl my-10">
-          <Image src={uxui} alt="" width={100} height={100} />
-          <h3 className="text-lg font-medium">Ux Ui</h3>
-          <p>Creating user friendly front end websites</p>
-          <p>Using tools like:</p>
-          <ul>
-            <li>React</li>
-            <li>Tailwind</li>
-            <li>Next.js</li>
-            <li>Css</li>
-            <li>HTML</li>
-            <li></li>
-          </ul>
-        </div>
       </div>
     </section>
   );
