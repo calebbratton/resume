@@ -7,7 +7,7 @@
   height: 100px;
 
   background-color: #00FF00; /* Green color */
-transition:  0.5s ease-in-out;
+/* transition:  0.5s ease-in-out; */
   bottom: 0;
   border-top-right-radius: 30%;
   border-top-left-radius: 30%;

@@ -26,10 +26,10 @@ export default function Home() {
             <Experience />
           </div>
         </div>
-        <div className="fixed flex items-center w-[30px] right-2 justify-center top-[81%]">
+        <div className="fixed flex items-center w-[30px] lg:right-1/2 m:left-4 justify-center top-[81%]">
           <Lightsaber />
         </div>
-        <div className="z-[100] fixed flex items-center w-[30px] right-2 justify-center top-[80%]">
+        <div className="z-[100] fixed flex items-center w-[30px] lg:right-1/2 m:left-4 justify-center top-[80%]">
           <Image src={kenobi} alt="lightsaber hilt" />
         </div>
       </ThemeContext>
