@@ -1,0 +1,47 @@
+/* Lightsaber container */
+
+/* Lightsaber */
+.lightsaber {
+  position: absolute;
+  width: 17px;
+  height: 100px;
+
+  background-color: #00FF00; /* Green color */
+transition:  0.5s ease-in-out;
+  bottom: 0;
+  border-top-right-radius: 30%;
+  border-top-left-radius: 30%;
+  opacity: 0;
+}
+
+/* Make it visible when the "visible" class is applied */
+.lightsaber.visible {
+  opacity: 0.95;
+}
+
+/* Lightsaber blade (glow) */
+.blade {
+  width:100%;
+  height: 90%;
+  background-color: #00ff00;
+  border-radius: 50%;
+  margin: 0 auto;
+  filter: blur(10px);
+  animation: pulse 1s infinite;
+}
+
+/* Glow animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
