@@ -18,11 +18,6 @@ const Personal = () => {
       <div className="bg-black mx-auto w-40 h-40 rounded-full overflow-hidden">
         <Image alt="caleb in yosemite" src={caleb} objectFit="cover" />
       </div>
-      <div className="flex flex-row justify-center text-white">
-        <div className="w-min typewriter">
-          <h1>Hello There...</h1>
-        </div>
-      </div>
       <p className="text-md text-center px-10 py-5 text-white leading-8">
         I'm Caleb Bratton, a versatile software engineer based in Denver,
         Colorado, with a passion for creating innovative digital experiences. My
