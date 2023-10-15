@@ -15,9 +15,12 @@
     --color-background: 32 34 40;
     --color-foreground: 80 80 80;
   }
-}
 
-/* @font-face {
-  font-family: "burtons";
-  src: url("../public/burtons.otf")
-} */
+  @font-face {
+    font-family: "StarWars";
+    src: url("../public/STJEDISE.woff2") format("woff2");
+    src: url("../public/STJEDISE.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    }
+}

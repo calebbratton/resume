@@ -7,7 +7,7 @@ const Experience = () => {
     <>
       <div>
         {/* <CrawlerText /> */}
-        <div className="text-center bg-slate-700 shadow-lg p-10 my-10 rounded-xl">
+        <div className="text-center bg-slate-700/40 shadow-lg p-10 my-10 rounded-xl">
           <h3 className="text-white text-lg font-medium">Tech Enthusiast: </h3>
           <p className="text-white">
             My technical toolkit includes JavaScript, TypeScript, React, Go, and
@@ -15,7 +15,7 @@ const Experience = () => {
             explore new technologies.
           </p>
         </div>
-        <div className="text-center bg-slate-700 shadow-lg p-10 my-10 rounded-xl">
+        <div className="text-center bg-slate-700/40 shadow-lg p-10 my-10 rounded-xl">
           <h3 className="text-white text-lg font-medium">
             Music & Nature Lover:{" "}
           </h3>
@@ -26,7 +26,7 @@ const Experience = () => {
             adventure.
           </p>
         </div>
-        <div className="text-center bg-slate-700 shadow-lg p-10 my-10 rounded-xl">
+        <div className="text-center bg-slate-700/40 shadow-lg p-10 my-10 rounded-xl">
           <h3 className="text-white text-lg font-medium">
             Professional Achievements:{" "}
           </h3>
@@ -38,7 +38,7 @@ const Experience = () => {
             knowledge as a Software Engineer In Residence at Hack Reactor.
           </p>
         </div>
-        <div className="text-center bg-slate-700 shadow-lg p-10 my-10 rounded-xl">
+        <div className="text-center bg-slate-700/40 shadow-lg p-10 my-10 rounded-xl">
           <h3 className="text-white text-lg font-medium">
             Customer-Centric Background:{" "}
           </h3>
@@ -48,7 +48,7 @@ const Experience = () => {
             service and safety adherence.
           </p>
         </div>
-        <div className="text-center bg-slate-700 shadow-lg p-10 my-10 rounded-xl">
+        <div className="text-center bg-slate-700/40 shadow-lg p-10 my-10 rounded-xl">
           <h3 className="text-white text-lg font-medium">
             Passion for Growth:{" "}
           </h3>
