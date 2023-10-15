@@ -2,7 +2,7 @@ import { BsFillMoonStarsFill } from "react-icons/bs";
 import Image from "next/image";
 import caleb from "../public/photos/caleb.jpg";
 import { AiFillTwitterCircle, AiFillLinkedin } from "react-icons/ai";
-import DarkModeSwitcher from "./DarkModeSwitcher.jsx";
+import "./typewriter.css";
 
 const Personal = () => {
   return (
@@ -18,8 +18,13 @@ const Personal = () => {
       <div className="bg-black mx-auto w-40 h-40 rounded-full overflow-hidden">
         <Image alt="caleb in yosemite" src={caleb} objectFit="cover" />
       </div>
+      <div className="flex flex-row justify-center text-white">
+        <div className="w-min typewriter">
+          <h1>Hello There...</h1>
+        </div>
+      </div>
       <p className="text-md text-center px-10 py-5 text-white leading-8">
-        Hello! I'm Caleb Bratton, a versatile software engineer based in Denver,
+        I'm Caleb Bratton, a versatile software engineer based in Denver,
         Colorado, with a passion for creating innovative digital experiences. My
         journey in the tech world has been a dynamic one, and I bring a unique
         blend of skills, creativity, and a zest for life to every project I
