@@ -16,10 +16,8 @@ export default function Home() {
       </Head>
       <ThemeContext>
         <div className="flex flex-col bg-transparent md:flex-row">
-          <div className="w-full md:w-1/2 h-screen md:fixed md:inset-y-0 md:left-0 md:overflow-hidden">
-            <div className="p-6">
-              <Personal />
-            </div>
+          <div className="w-full md:w-1/2 h-screen md:fixed md:left-0 md:overflow-hidden">
+            <Personal />
           </div>
 
           <div className="w-full ml-auto bg-transparent md:w-1/2 p-6">
