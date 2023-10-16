@@ -9,7 +9,7 @@ import kenobi from "../public/photos/kenobi.png";
 
 export default function Home() {
   return (
-    <div className="bg-[url('../public/photos/stars.jpg')] bg-fixed bg-contain">
+    <div className="bg-[url('../public/photos/stars.jpg')] bg-fixed bg-cover">
       <Head>
         <title>Caleb Bratton Software Engineer</title>
         <meta name="description" content="tailwind" />
