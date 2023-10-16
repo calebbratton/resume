@@ -15,8 +15,14 @@ const Personal = () => {
           Software Engineer
         </h3>
       </div>
-      <div className="bg-black mx-auto w-40 h-40 rounded-full overflow-hidden">
-        <Image alt="caleb in yosemite" src={caleb} objectFit="cover" />
+      <div className="bg-transparent mx-auto overflow-hidden">
+        <Image
+          alt="caleb in yosemite"
+          className="rounded-full"
+          src={caleb}
+          objectFit="cover"
+          height={"200"}
+        />
       </div>
       <p className="text-md text-center px-10 py-5 text-white leading-8">
         I'm Caleb Bratton, a versatile software engineer based in Denver,

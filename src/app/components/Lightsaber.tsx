@@ -20,12 +20,14 @@ const Lightsaber = () => {
   return (
     <>
       <div
-        className={`lightsaber ${scrollPosition > 1 ? "visible" : ""}`}
+        className={`lightsaber max-h-[450px] ${
+          scrollPosition > 1 ? "visible" : ""
+        }`}
         style={{
           height: scrollPosition > 1 ? `${scrollPosition}px` : "0",
         }}
       >
-        <div className="blade"></div>
+        <div className="blade max-h-[450px]" />
       </div>
     </>
   );
