@@ -20,29 +20,22 @@ const CrawlerText = () => {
   }, []);
   return (
     <div
-      className={`crawl ${scrollPosition > 1 ? "visible" : ""}`}
-      style={{
-        transform:
-          scrollPosition > 1 ? `translateY(${scrollPosition * -10}px)` : "0",
-      }}
-    >
-      <p className="preheader">Episode VII</p>
-      <h2 className="header">THE FORCE AWAKENS</h2>
+    id="board"
+    className={`text-yellow-400 w-screen h-[1000px] bg-transparent`}
+  >
+    <div id="content">
+      <p id="title">Episode I</p>
+      <p id="subtitle">THE CODER'S MENACE</p>
+      <br />
       <p>
-        Luke Skywalker has vanished. In his absence, the sinister FIRST ORDER
-        has risen from the ashes of the Empire and will not rest until
-        Skywalker, the last Jedi, has been destroyed.
-      </p>
-      <p>
-        With the support of the REPUBLIC, General Leia Organa leads a brave
-        RESISTANCE. She is desperate to find her brother Luke and gain his help
-        in restoring peace and justice to the galaxy.
-      </p>
-      <p>
-        Leia has sent her most daring pilot on a secret mission to Jakku, where
-        an old ally has discovered a clue to Luke's whereabouts....
+        I'm Caleb Bratton, a versatile software engineer based in Denver,
+        Colorado, with a passion for creating innovative digital
+        experiences. My journey in the tech world has been a dynamic one,
+        and I bring a unique blend of skills, creativity, and a zest for
+        life to every project I undertake.
       </p>
     </div>
+  </div>
   );
 };
 

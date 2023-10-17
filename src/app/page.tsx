@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Head from "next/head";
 import Experience from "./Experience";
@@ -6,6 +7,8 @@ import ThemeContext from "../context/ThemeContext";
 import Nav from "./Nav";
 import Lightsaber from "./components/Lightsaber";
 import kenobi from "../public/photos/kenobi.png";
+import "./crawl.css";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function Home() {
   return (
