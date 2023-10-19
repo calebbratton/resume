@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface Apps {
-  [key: string]: ReactNode;
-}
+export interface AppWindow {
+  [key:string]: boolean;
+  };

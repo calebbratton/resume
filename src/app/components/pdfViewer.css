@@ -1,0 +1,12 @@
+.pdf-viewer-container {
+  width: 100%; /* Set the width to 100% of its parent container */
+  height: 100%; /* Set the height to 100% of its parent container */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .pdf-viewer-container {
+    width: 50%; /* Adjust the width for smaller screens */
+    height: 90vh; /* Adjust the height for smaller screens */
+  }
+}

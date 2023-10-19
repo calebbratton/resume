@@ -5,11 +5,21 @@ import TaskBar from "./TaskBar";
 import WindowComponent from "./components/WindowComponent";
 import Screen from "./Screen";
 import "98.css";
-import { ReactNode, useState } from "react";
-import { Apps } from "@/types/main";
+import { ReactNode, createContext, useEffect, useState } from "react";
+import { AppWindow } from "@/types/main";
+import { WindowContext } from "../context/context";
+import Explorer from "./components/Explorer";
+import SkillsWindow from "./components/ResumeWindow";
+
+const appReference: { [key: string]: ReactNode } = {
+  "Internet Explorer": <Explorer />,
+  Resume: <SkillsWindow />,
+};
 
 export default function Home() {
-  const [openApps, setOpenApps] = useState<Apps>({});
+  const [windows, setWindows] = useState<AppWindow>({
+    "Internet Explorer": true,
+  });
 
   return (
     <div>
@@ -18,8 +28,21 @@ export default function Home() {
         <meta name="description" content="tailwind" />
         {/* <link rel="stylesheet" href="https://unpkg.com/98.css"></link> */}
       </Head>
-      <Screen openApps={openApps} setOpenApps={setOpenApps} />
-      <TaskBar children={Object.keys(openApps)} />
+      <WindowContext.Provider value={{ windows, setWindows }}>
+        {Object.keys(windows).map((item) =>
+          windows[item] ? (
+            <div
+              className="absolute inset-0 flex justify-center items-center"
+              key={item}
+            >
+              {appReference[item]}
+            </div>
+          ) : null
+        )}
+
+        <Screen />
+        <TaskBar />
+      </WindowContext.Provider>
     </div>
   );
 }
