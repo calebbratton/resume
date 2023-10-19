@@ -26,15 +26,11 @@ export default function Home() {
       <Head>
         <title>Caleb Bratton Software Engineer</title>
         <meta name="description" content="tailwind" />
-        {/* <link rel="stylesheet" href="https://unpkg.com/98.css"></link> */}
       </Head>
       <WindowContext.Provider value={{ windows, setWindows }}>
         {Object.keys(windows).map((item) =>
           windows[item] ? (
-            <div
-              className="absolute inset-0 flex justify-center items-center"
-              key={item}
-            >
+            <div className="relative" key={item}>
               {appReference[item]}
             </div>
           ) : null

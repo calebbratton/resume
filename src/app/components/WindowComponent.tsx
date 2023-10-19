@@ -20,8 +20,8 @@ function WindowComponent({ title, children, className }: WindowProps) {
     setWindows({ ...windows, [title]: false });
   };
   return (
-    <Draggable>
-      <div className={`window overflow-scroll ${className}`}>
+    <Draggable defaultClassName="absolute top-8 left-40">
+      <div className={`window overflow-scroll ${className} `}>
         <div className="title-bar">
           <div className="title-bar-text">{title}</div>
           <div className="title-bar-controls">
