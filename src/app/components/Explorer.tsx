@@ -3,9 +3,9 @@ import WindowComponent from "./WindowComponent";
 
 const Explorer = () => {
   return (
-    <WindowComponent className="w-3/4" title="Internet Explorer">
+    <WindowComponent className="w-full md:w-3/4" title="Internet Explorer">
       <div className="flex w-full flex-col bg-white overflow-auto">
-        <div className="flex px-8 flex-row flex-wrap justify-between h-6 items-center bg-blue-400">
+        <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-blue-400">
           <p className="text-white font-bold">Home</p> |{" "}
           <p className="text-white font-bold">Browse</p> |{" "}
           <p className="text-white font-bold">Search</p> |{" "}

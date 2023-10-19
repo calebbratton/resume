@@ -4,7 +4,7 @@ import { Document, Page } from "react-pdf";
 
 const ResumeWindow = () => {
   return (
-    <WindowComponent title="Resume">
+    <WindowComponent className="w-full md:w-3/4" title="Resume">
       <PdfViewer />
     </WindowComponent>
   );
