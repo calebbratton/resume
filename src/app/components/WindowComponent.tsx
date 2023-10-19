@@ -16,18 +16,22 @@ function WindowComponent({ title, children, className }: WindowProps) {
     delete deletion[title];
     setWindows(deletion);
   };
-  const handleMinimixe = () => {
+  const handleMinimize = () => {
     setWindows({ ...windows, [title]: false });
   };
   return (
-    <Draggable defaultClassName="absolute">
-      <div className={`window overflow-scroll ${className} `}>
+    <Draggable defaultClassName="absolute" cancel=".btn">
+      <div className={`window overflow-scroll absolute ${className} `}>
         <div className="title-bar">
           <div className="title-bar-text">{title}</div>
           <div className="title-bar-controls">
-            <button aria-label="Minimize" onClick={handleMinimixe} />
-            <button aria-label="Maximize" />
-            <button aria-label="Close" onClick={handleClose} />
+            <button
+              className="btn"
+              aria-label="Minimize"
+              onClick={handleMinimize}
+            />
+            <button className="btn" aria-label="Maximize" />
+            <button className="btn" aria-label="Close" onClick={handleClose} />
           </div>
         </div>
         <div className="window-body">{children}</div>
