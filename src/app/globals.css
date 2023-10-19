@@ -6,7 +6,7 @@
   :root {
     --color-primary: 150 0 0;
     --color-secondary: 164 58 58;
-    --color-background: 208 208 221;
+    --color-background: 1 130 129;
     --color-foreground: 252 252 255;
   }
   :root[class~='dark'] {
