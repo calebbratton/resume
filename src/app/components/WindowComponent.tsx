@@ -21,7 +21,7 @@ function WindowComponent({ title, children, className }: WindowProps) {
   };
   return (
     <Draggable defaultClassName="absolute" cancel=".btn">
-      <div className={`window overflow-scroll absolute ${className} `}>
+      <div className={`window absolute ${className} `}>
         <div className="title-bar">
           <div className="title-bar-text">{title}</div>
           <div className="title-bar-controls">
@@ -34,7 +34,7 @@ function WindowComponent({ title, children, className }: WindowProps) {
             <button className="btn" aria-label="Close" onClick={handleClose} />
           </div>
         </div>
-        <div className="window-body">{children}</div>
+        <div className="window-body overflow-auto">{children}</div>
       </div>
     </Draggable>
   );
