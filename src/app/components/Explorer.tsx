@@ -60,36 +60,31 @@ const Explorer = () => {
               </div>
             </div>
 
-            <div className="mt-4 border-2 border-blue-400">
-              <p className="font-bold">CalebSpace URL:</p>
-              <p>https://calebbratton.com</p>
-            </div>
-
             <div className="mt-4 ">
               <div className="text-white font-bold px-4 bg-blue-400">
                 Caleb's Interests
               </div>
-              <div className="grid grid-cols-4 pt-0.5 gap-0.5 grid-flow-row">
-                <div className="bg-blue-300 font-bold pl-2 text-blue-600">
+              <div className="grid grid-cols-4 pt-0.5 gap-0.5 grid-flow-row text-sm">
+                <div className="bg-blue-300 px-2 font-bold text-blue-600">
                   General
                 </div>
-                <div className="bg-blue-200 pl-2 col-span-3">
+                <div className="bg-blue-200 px-2 col-span-3">
                   I love coding, climbing, snowboardings, fall weather, music,
                   and my wife (hey babe).
                 </div>
-                <div className="bg-blue-300 font-bold pl-2 text-blue-600">
+                <div className="bg-blue-300 px-2 font-bold text-blue-600">
                   Work History
                 </div>
-                <div className="bg-blue-200 pl-2 col-span-3 ">
-                  My current work at Dish Network has provided me with may
+                <div className="bg-blue-200 px-2 col-span-3 ">
+                  My current work at Dish Network has provided me with many
                   opportunites from well established core backend projects for
                   Sling TV and working on green field projects taking an idea
                   from zero to one.
                 </div>
-                <div className="bg-blue-300 font-bold pl-2 text-blue-600">
+                <div className="bg-blue-300 px-2 font-bold text-blue-600">
                   Music
                 </div>
-                <div className="bg-blue-200 pl-2 col-span-3">
+                <div className="bg-blue-200 px-2 col-span-3">
                   I love everything; from hardcore, rock, to country, folk and
                   r&b, I find almost all music enjoyable. Currently I am listing
                   to a lot of indie rock and Alex G and Men I Trust have been
@@ -108,7 +103,7 @@ const Explorer = () => {
               <div className="bg-orange-300 text-orange-700 font-bold text-base p-2">
                 Caleb's Blurbs
               </div>
-              <div className="px-4">
+              <div className="px-4 pt-4 pb-8">
                 <p className="text-orange-700 font-bold text-base">About Me:</p>
                 <p className="text-sm">
                   I'm Caleb, a versatile software engineer living in Denver,
@@ -116,7 +111,11 @@ const Explorer = () => {
                   flight attendant for 6 years. In that time I got to see
                   beautiful countries and meet amazing people. When COVID struck
                   I took the opportunity to learn a new skill, software
-                  development.
+                  development. What I enjoy most about software engineering is
+                  the kind of people I get to work with. Working with people who
+                  have cultivated a growth mindset is something I truly
+                  appreciate. Getting to learn new skills and better myself
+                  every day is my favorite part about my job.
                 </p>
               </div>
             </div>
