@@ -4,7 +4,7 @@ import WindowComponent from "./WindowComponent";
 const Explorer = () => {
   return (
     <WindowComponent className="max-h-[80vh]" title="Internet Explorer">
-      <div className="flex w-full flex-col bg-white font-sans">
+      <div className="flex w-full flex-col bg-white font-sans pb-4">
         <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-blue-400">
           <p className="text-white font-bold">Home</p> |{" "}
           <p className="text-white font-bold">Browse</p> |{" "}
@@ -67,7 +67,34 @@ const Explorer = () => {
 
             <div className="mt-4 ">
               <div className="text-white font-bold px-4 bg-blue-400">
-                Caleb's Experience
+                Caleb's Interests
+              </div>
+              <div className="grid grid-cols-4 pt-0.5 gap-0.5 grid-flow-row">
+                <div className="bg-blue-300 font-bold pl-2 text-blue-600">
+                  General
+                </div>
+                <div className="bg-blue-200 pl-2 col-span-3">
+                  I love coding, climbing, snowboardings, fall weather, music,
+                  and my wife (hey babe).
+                </div>
+                <div className="bg-blue-300 font-bold pl-2 text-blue-600">
+                  Work History
+                </div>
+                <div className="bg-blue-200 pl-2 col-span-3 ">
+                  My current work at Dish Network has provided me with may
+                  opportunites from well established core backend projects for
+                  Sling TV and working on green field projects taking an idea
+                  from zero to one.
+                </div>
+                <div className="bg-blue-300 font-bold pl-2 text-blue-600">
+                  Music
+                </div>
+                <div className="bg-blue-200 pl-2 col-span-3">
+                  I love everything; from hardcore, rock, to country, folk and
+                  r&b, I find almost all music enjoyable. Currently I am listing
+                  to a lot of indie rock and Alex G and Men I Trust have been
+                  frequent on my playlist
+                </div>
               </div>
             </div>
           </div>
@@ -85,7 +112,11 @@ const Explorer = () => {
                 <p className="text-orange-700 font-bold text-base">About Me:</p>
                 <p className="text-sm">
                   I'm Caleb, a versatile software engineer living in Denver,
-                  Colorado.
+                  Colorado. Before becoming an engineer I was a United Airlines
+                  flight attendant for 6 years. In that time I got to see
+                  beautiful countries and meet amazing people. When COVID struck
+                  I took the opportunity to learn a new skill, software
+                  development.
                 </p>
               </div>
             </div>
