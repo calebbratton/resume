@@ -20,9 +20,13 @@ function WindowComponent({ title, children, className }: WindowProps) {
     setWindows({ ...windows, [title]: false });
   };
   return (
-    <Draggable defaultClassName="absolute" cancel=".btn">
-      <div className={`window absolute ${className} `}>
-        <div className="title-bar">
+    <Draggable
+      defaultClassName="absolute top-10 md:left-32"
+      handle=".handle"
+      cancel=".btn"
+    >
+      <div className={`window`}>
+        <div className="title-bar handle">
           <div className="title-bar-text">{title}</div>
           <div className="title-bar-controls">
             <button
@@ -34,7 +38,9 @@ function WindowComponent({ title, children, className }: WindowProps) {
             <button className="btn" aria-label="Close" onClick={handleClose} />
           </div>
         </div>
-        <div className="window-body overflow-auto">{children}</div>
+        <div className={`${className} window-body overflow-auto`}>
+          {children}
+        </div>
       </div>
     </Draggable>
   );

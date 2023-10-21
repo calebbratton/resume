@@ -12,6 +12,7 @@ const PDFViewer = () => {
     <div className="pdf-viewer-container">
       <Document file="/CalebResume.pdf">
         <Page
+          width={300}
           renderTextLayer={false}
           renderAnnotationLayer={false}
           pageNumber={1}

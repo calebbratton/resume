@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext, useState } from "react";
+import React, { ReactNode, useContext, useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import "98.css";
 // import startLogo from "/windowsLogo.png";
@@ -14,12 +14,22 @@ const iconReference: { [key: string]: string } = {
 
 function TaskBar() {
   const { windows, setWindows } = useContext(WindowContext);
+  const [currentTime, setCurrentTime] = useState<Date>(new Date());
   const date = new Date();
   const handleReopen = (item: string) => {
     setWindows({ ...windows, [item]: true });
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
-    <div className="flex flex-row px-2 h-10 justify-between py-1 fixed bottom-0 w-full bg-gray-300 border-t-2 border-gray-500">
+    <div className="flex flex-row px-2 h-10 justify-between py-1 fixed bottom-0 w-screen bg-gray-300 border-t-2 border-gray-500">
       <div className="flex flex-row">
         <button className="flex flex-row items-center text-base font-sans cursor-pointer">
           <Image
@@ -52,7 +62,7 @@ function TaskBar() {
       </div>
       <div className=" status-bar text-base">
         <p className="status-bar-field h-full flex justify-center items-center">
-          {date.toLocaleTimeString("en-US").replace(/(.*)\D\d+/, "$1")}
+          {currentTime.toLocaleTimeString("en-US").replace(/(.*)\D\d+/, "$1")}
         </p>
       </div>
     </div>
