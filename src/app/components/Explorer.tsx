@@ -77,18 +77,18 @@ const Explorer = () => {
                 </div>
                 <div className="bg-blue-200 px-2 col-span-3 ">
                   My current work at Dish Network has provided me with many
-                  opportunites from well established core backend projects for
-                  Sling TV and working on green field projects taking an idea
-                  from zero to one.
+                  opportunites. I have worked on well established backend
+                  projects for Sling TV to green field research projects taking
+                  an idea from zero to one.
                 </div>
                 <div className="bg-blue-300 px-2 font-bold text-blue-600">
                   Music
                 </div>
                 <div className="bg-blue-200 px-2 col-span-3">
-                  I love everything; from hardcore, rock, to country, folk and
-                  r&b, I find almost all music enjoyable. Currently I am listing
-                  to a lot of indie rock and Alex G and Men I Trust have been
-                  frequent on my playlist
+                  I love everything; from hardcore, punk and indie rock, to
+                  country, folk and r&b. I find almost all music enjoyable. I am
+                  currently listing to a lot of indie rock. "Alex G" and "Men I
+                  Trust" have been frequently on my playlist.
                 </div>
               </div>
             </div>
@@ -107,15 +107,16 @@ const Explorer = () => {
                 <p className="text-orange-700 font-bold text-base">About Me:</p>
                 <p className="text-sm">
                   I'm Caleb, a versatile software engineer living in Denver,
-                  Colorado. Before becoming an engineer I was a United Airlines
-                  flight attendant for 6 years. In that time I got to see
-                  beautiful countries and meet amazing people. When COVID struck
-                  I took the opportunity to learn a new skill, software
-                  development. What I enjoy most about software engineering is
-                  the kind of people I get to work with. Working with people who
-                  have cultivated a growth mindset is something I truly
-                  appreciate. Getting to learn new skills and better myself
-                  every day is my favorite part about my job.
+                  Colorado. Before becoming an engineer, I was a flight
+                  attendant United Airlines for 6 years. During that time, I got
+                  to visit beautiful countries and meet amazing people. When
+                  COVID struck, I took the opportunity to learn a new skill,
+                  software development. What I enjoy most about software
+                  engineering is the kind of people I get to work with.
+                  Collaborating with people who have cultivated a growth mindset
+                  is something I truly appreciate. Getting to learn new skills
+                  and better myself every day is my favorite part about being an
+                  engineer.
                 </p>
               </div>
             </div>
