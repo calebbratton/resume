@@ -69,26 +69,26 @@ const Explorer = () => {
                   General
                 </div>
                 <div className="bg-blue-200 px-2 col-span-3">
-                  I love coding, climbing, snowboardings, fall weather, music,
+                  I love coding, climbing, snowboarding, fall weather, music,
                   and my wife (hey babe).
                 </div>
                 <div className="bg-blue-300 px-2 font-bold text-blue-600">
                   Work History
                 </div>
-                <div className="bg-blue-200 px-2 col-span-3 ">
+                <div className="bg-blue-200 px-2 col-span-3">
                   My current work at Dish Network has provided me with many
-                  opportunites. I have worked on well established backend
-                  projects for Sling TV to green field research projects taking
-                  an idea from zero to one.
+                  opportunities. I have worked on well-established backend
+                  projects for Sling TV, as well as greenfield research
+                  projects, taking an idea from zero to one.
                 </div>
                 <div className="bg-blue-300 px-2 font-bold text-blue-600">
                   Music
                 </div>
                 <div className="bg-blue-200 px-2 col-span-3">
-                  I love everything; from hardcore, punk and indie rock, to
-                  country, folk and r&b. I find almost all music enjoyable. I am
-                  currently listing to a lot of indie rock. "Alex G" and "Men I
-                  Trust" have been frequently on my playlist.
+                  I love everything; from hardcore, punk, and indie rock to
+                  country, folk, and R&B. I find almost all music enjoyable. I
+                  am currently listening to a lot of indie rock. "Alex G" and
+                  "Men I Trust" have frequently been on my playlist.
                 </div>
               </div>
             </div>
@@ -108,15 +108,15 @@ const Explorer = () => {
                 <p className="text-sm">
                   I'm Caleb, a versatile software engineer living in Denver,
                   Colorado. Before becoming an engineer, I was a flight
-                  attendant United Airlines for 6 years. During that time, I got
-                  to visit beautiful countries and meet amazing people. When
-                  COVID struck, I took the opportunity to learn a new skill,
-                  software development. What I enjoy most about software
-                  engineering is the kind of people I get to work with.
-                  Collaborating with people who have cultivated a growth mindset
-                  is something I truly appreciate. Getting to learn new skills
-                  and better myself every day is my favorite part about being an
-                  engineer.
+                  attendant at United Airlines for 6 years. During that time, I
+                  had the opportunity to visit beautiful countries and meet
+                  amazing people. When COVID struck, I seized the opportunity to
+                  learn a new skill: software development. What I enjoy most
+                  about software engineering is the people I get to work with.
+                  Collaborating with individuals who have cultivated a growth
+                  mindset is something I truly appreciate. Getting to learn new
+                  skills and bettering myself every day is my favorite part of
+                  being an engineer.
                 </p>
               </div>
             </div>
