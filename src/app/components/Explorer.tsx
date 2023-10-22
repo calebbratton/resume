@@ -87,8 +87,8 @@ const Explorer = () => {
                 <div className="bg-blue-200 px-2 col-span-3">
                   I love everything; from hardcore, punk, and indie rock to
                   country, folk, and R&B. I find almost all music enjoyable. I
-                  am currently listening to a lot of indie rock. "Alex G" and
-                  "Men I Trust" have frequently been on my playlist.
+                  am currently listening to a lot of indie rock. Alex G and Men
+                  I Trust have frequently been on my playlist.
                 </div>
               </div>
             </div>
