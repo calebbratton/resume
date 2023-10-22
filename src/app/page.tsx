@@ -28,13 +28,11 @@ export default function Home() {
         <meta name="description" content="tailwind" />
       </Head>
       <WindowContext.Provider value={{ windows, setWindows }}>
-        {Object.keys(windows).map((item) =>
-          windows[item] ? (
-            <div className="relative" key={item}>
-              {appReference[item]}
-            </div>
-          ) : null
-        )}
+        <div className="overflow-hidden">
+          {Object.keys(windows).map((item) =>
+            windows[item] ? <div key={item}>{appReference[item]}</div> : null
+          )}
+        </div>
 
         <Screen />
         <TaskBar />

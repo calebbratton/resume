@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
-import "./pdfViewer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -9,10 +8,9 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const PDFViewer = () => {
   return (
-    <div className="pdf-viewer-container">
+    <div className="max-w-[90vw] max-h-[80vh]">
       <Document file="/CalebResume.pdf">
         <Page
-          width={300}
           renderTextLayer={false}
           renderAnnotationLayer={false}
           pageNumber={1}

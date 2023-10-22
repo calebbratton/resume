@@ -40,7 +40,7 @@ function TaskBar() {
           />
           <p className="pl-2">Start</p>
         </button>
-        <div className="status-bar text-base pl-2">
+        <div className="status-bar text-base">
           {Object.keys(windows).map((item: string) => (
             <button
               key={item}
@@ -55,13 +55,13 @@ function TaskBar() {
                 width={20}
                 height={20}
               />
-              <p className="pl-2">{item}</p>
+              <p className="pl-1 truncate flex-shrink-0">{item}</p>
             </button>
           ))}
         </div>
       </div>
       <div className=" status-bar text-base">
-        <p className="status-bar-field h-full flex justify-center items-center">
+        <p className="status-bar-field flex-shrink-0 h-full flex justify-center items-center">
           {currentTime.toLocaleTimeString("en-US").replace(/(.*)\D\d+/, "$1")}
         </p>
       </div>
