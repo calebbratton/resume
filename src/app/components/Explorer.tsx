@@ -4,24 +4,24 @@ import WindowComponent from "./WindowComponent";
 const Explorer = () => {
   return (
     <WindowComponent className="h-[70vh]" title="Internet Explorer">
+      <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-blue-400">
+        <p className="text-white font-bold">Home</p> |{" "}
+        <p className="text-white font-bold">Browse</p> |{" "}
+        <p className="text-white font-bold">Search</p> |{" "}
+        <p className="text-white font-bold">Invite</p> |{" "}
+        <p className="text-white font-bold">Film</p> |{" "}
+        <p className="text-white font-bold">Mail</p> |{" "}
+        <p className="text-white font-bold">Blog</p> |{" "}
+        <p className="text-white font-bold">Favorites</p> |
+        <p className="text-white font-bold">Forum</p> |{" "}
+        <p className="text-white font-bold">Groups</p> |{" "}
+        <p className="text-white font-bold">Events</p> |{" "}
+        <p className="text-white font-bold">Videos</p> |{" "}
+        <p className="text-white font-bold">Music</p> |{" "}
+        <p className="text-white font-bold">Classifieds</p>
+      </div>
       <div className="flex w-full flex-col bg-white font-sans pb-4">
-        <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-blue-400">
-          <p className="text-white font-bold">Home</p> |{" "}
-          <p className="text-white font-bold">Browse</p> |{" "}
-          <p className="text-white font-bold">Search</p> |{" "}
-          <p className="text-white font-bold">Invite</p> |{" "}
-          <p className="text-white font-bold">Film</p> |{" "}
-          <p className="text-white font-bold">Mail</p> |{" "}
-          <p className="text-white font-bold">Blog</p> |{" "}
-          <p className="text-white font-bold">Favorites</p> |
-          <p className="text-white font-bold">Forum</p> |{" "}
-          <p className="text-white font-bold">Groups</p> |{" "}
-          <p className="text-white font-bold">Events</p> |{" "}
-          <p className="text-white font-bold">Videos</p> |{" "}
-          <p className="text-white font-bold">Music</p> |{" "}
-          <p className="text-white font-bold">Classifieds</p>
-        </div>
-        <div className="flex lg:flex-row md:flex-row flex-col pt-4 md:px-24">
+        <div className="flex lg:flex-row md:flex-row flex-col pt-4">
           <div className="flex flex-col px-4 w-full md:w-2/3">
             <div className="flex flex-row">
               <div>
@@ -153,7 +153,10 @@ const Explorer = () => {
                     },
                   ].map((item) => {
                     return (
-                      <div className="flex flex-col items-center">
+                      <div
+                        key={item.name}
+                        className="flex flex-col items-center"
+                      >
                         <p>{item.name}</p>
                         <Image
                           src={item.src}

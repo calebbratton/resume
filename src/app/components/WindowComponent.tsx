@@ -20,8 +20,8 @@ function WindowComponent({ title, children, className }: WindowProps) {
     setWindows({ ...windows, [title]: false });
   };
   return (
-    <Draggable defaultClassName={``} handle=".handle" cancel=".btn">
-      <div className={`window absolute md:left-32 top-24`}>
+    <Draggable handle=".handle" cancel=".btn">
+      <div className={`window absolute top-20 md:left-32 md:w-[80vw]`}>
         <div className="title-bar handle">
           <div className="title-bar-text">{title}</div>
           <div className="title-bar-controls">

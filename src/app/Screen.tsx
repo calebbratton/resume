@@ -6,7 +6,7 @@ import SkillsWindow from "./components/ResumeWindow";
 import { AppWindow } from "@/types/main";
 import { WindowContext } from "@/context/context";
 
-const Screen = () => {
+const Screen = ({ children }: { children: ReactNode }) => {
   const { windows, setWindows } = useContext(WindowContext);
   const iconClickHandler = (app: string) => {
     if (app && windows) {
@@ -14,29 +14,32 @@ const Screen = () => {
     }
   };
   return (
-    <div className="flex flex-start h-full">
-      <div className="grid grid-col-2 gap-8 grid-flow-row p-4 text-white">
-        <div
-          className="flex flex-col justify-center items-center"
-          onClick={() => iconClickHandler("Resume")}
-        >
-          <Image alt="Resume" width={60} height={60} src="/file98.png" />
+    <div className="flex flex-col h-full">
+      <div className="flex flex-start">
+        <div className="grid grid-col-2 gap-8 grid-flow-row p-4 text-white">
+          <div
+            className="flex flex-col justify-center items-center"
+            onClick={() => iconClickHandler("Resume")}
+          >
+            <Image alt="Resume" width={60} height={60} src="/file98.png" />
 
-          <p>Resume</p>
-        </div>
-        <div
-          className="flex flex-col justify-center items-center"
-          onClick={() => iconClickHandler("Internet Explorer")}
-        >
-          <Image
-            alt="Internet Explorer"
-            width={60}
-            height={60}
-            src="/explorer.png"
-          />
-          <p>Internet Explorer</p>
+            <p>Resume</p>
+          </div>
+          <div
+            className="flex flex-col justify-center items-center"
+            onClick={() => iconClickHandler("Internet Explorer")}
+          >
+            <Image
+              alt="Internet Explorer"
+              width={60}
+              height={60}
+              src="/explorer.png"
+            />
+            <p>Internet Explorer</p>
+          </div>
         </div>
       </div>
+      {children}
     </div>
   );
 };
