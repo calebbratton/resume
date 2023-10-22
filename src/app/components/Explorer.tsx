@@ -3,7 +3,7 @@ import WindowComponent from "./WindowComponent";
 
 const Explorer = () => {
   return (
-    <WindowComponent className="h-[70vh]" title="Internet Explorer">
+    <WindowComponent className="h-[70vh] w-[90vw]" title="Internet Explorer">
       <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-blue-400">
         <p className="text-white font-bold">Home</p> |{" "}
         <p className="text-white font-bold">Browse</p> |{" "}
