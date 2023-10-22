@@ -16,12 +16,20 @@ function WindowComponent({ title, children, className }: WindowProps) {
     delete deletion[title];
     setWindows(deletion);
   };
+  const handleClick = () => {
+    const deletion = { ...windows };
+    delete deletion[title];
+    deletion[title] = true;
+    setWindows(deletion);
+  };
   const handleMinimize = () => {
     setWindows({ ...windows, [title]: false });
   };
   return (
-    <Draggable handle=".handle" cancel=".btn">
-      <div className={`window absolute top-20 left-2 md:left-12 lg:left-12`}>
+    <Draggable handle=".handle" cancel=".btn" onMouseDown={handleClick}>
+      <div
+        className={`window handle absolute top-20 left-2 md:left-12 lg:left-12`}
+      >
         <div className="title-bar handle">
           <div className="title-bar-text">{title}</div>
           <div className="title-bar-controls">

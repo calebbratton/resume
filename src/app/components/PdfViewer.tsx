@@ -8,7 +8,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 const PDFViewer = () => {
   return (
-    <div className="max-w-[90vw] max-h-[80vh]">
+    <div className="max-w-[88vw] max-h-[75vh]">
       <Document file="/CalebResume.pdf">
         <Page
           renderTextLayer={false}

@@ -3,9 +3,6 @@ import Image, { StaticImageData } from "next/image";
 import "98.css";
 // import startLogo from "/windowsLogo.png";
 import { WindowContext } from "../context/context";
-import { AppWindow } from "@/types/main";
-import skills from "/file98.png";
-import explorerPage from "/explorerPage.png";
 
 const iconReference: { [key: string]: string } = {
   "Internet Explorer": "/explorerPage.png",
@@ -82,7 +79,9 @@ function TaskBar() {
             {Object.keys(windows).map((item: string) => (
               <button
                 key={item}
-                className="flex flex-row items-center font-bold"
+                className={`${
+                  windows[item] ? "status-bar-field" : ""
+                } flex flex-row items-center font-bold`}
                 onClick={() => {
                   handleReopen(item);
                 }}
@@ -93,7 +92,7 @@ function TaskBar() {
                   width={20}
                   height={20}
                 />
-                <p className="pl-1 truncate flex-shrink-0">{item}</p>
+                <p className="px-2 truncate">{item}</p>
               </button>
             ))}
           </div>
