@@ -21,7 +21,7 @@ function WindowComponent({ title, children, className }: WindowProps) {
   };
   return (
     <Draggable defaultClassName={``} handle=".handle" cancel=".btn">
-      <div className={`window absolute md:left-32`}>
+      <div className={`window absolute md:left-32 top-24`}>
         <div className="title-bar handle">
           <div className="title-bar-text">{title}</div>
           <div className="title-bar-controls">
