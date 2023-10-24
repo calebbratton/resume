@@ -127,8 +127,8 @@ const Explorer = () => {
               <div className="bg-orange-300 text-orange-700 font-bold text-base p-2">
                 Caleb's Friend Space
               </div>
-              <div className="">
-                <div className="grid grid-cols-4 grid-flow-row gap-2">
+              <div className="mt-4">
+                <div className="grid grid-cols-4 grid-flow-row gap-x-2 gap-y-4">
                   {[
                     {
                       name: "Javascript",
@@ -158,7 +158,7 @@ const Explorer = () => {
                     return (
                       <div
                         key={item.name}
-                        className="flex flex-col items-center"
+                        className="flex flex-col justify-center items-center"
                       >
                         <p>{item.name}</p>
                         <Image
@@ -171,6 +171,17 @@ const Explorer = () => {
                     );
                   })}
                 </div>
+              </div>
+            </div>
+            <div className="mt-4">
+              <div className="bg-orange-300 text-orange-700 font-bold text-base p-2">
+                Caleb's Friends Comments
+              </div>
+              <div className="px-4 pt-4 pb-8 font-bold">
+                <span className="flex flex-row">
+                  Displaying 0 of 0 comments (<a className="px-1">View All </a>|
+                  <a className="px-1">Add Comment</a>)
+                </span>
               </div>
             </div>
           </div>
