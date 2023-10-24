@@ -1,6 +1,7 @@
 import React, { ReactNode, useContext, useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import "98.css";
+import "./override98.css";
 import { WindowContext } from "@/context/context";
 
 interface WindowProps {
@@ -40,7 +41,9 @@ function WindowComponent({ title, children, className }: WindowProps) {
             <button className="btn" aria-label="Close" onClick={handleClose} />
           </div>
         </div>
-        <div className={`relative overflow-auto ${className} window-body mb-4`}>
+        <div
+          className={`relative overflow-auto flex flex-col items-center ${className}`}
+        >
           {children}
         </div>
       </div>
