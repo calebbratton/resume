@@ -2,6 +2,9 @@ import Image from "next/image";
 import WindowComponent from "./WindowComponent";
 
 const Explorer = () => {
+  const age = Math.floor(
+    (Number(new Date()) - Number(new Date("1992-12-10"))) / 31557600000
+  );
   return (
     <WindowComponent
       className="mx-2 max-h-[80vh] max-w-[90vw] w-[1200px]"
@@ -34,7 +37,7 @@ const Explorer = () => {
               </div>
               <div className="flex flex-col text-sm pl-4 mt-10">
                 <p>:-)</p>
-                <p>31 years old</p>
+                <p>{age} years old</p>
                 <p>Denver,</p>
                 <p>COLORADO</p>
                 <p>United States</p>
