@@ -59,6 +59,7 @@ const Explorer = () => {
                   />
                 </a>
                 <div
+                  className="cursor-pointer"
                   onClick={async () => {
                     console.log("clicked");
                     try {
