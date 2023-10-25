@@ -48,18 +48,46 @@ const Explorer = () => {
               <div className="text-white font-bold px-4 bg-blue-400">
                 Contacting Caleb
               </div>
-              <div className="grid grid-cols-4 grid-rows-2 gap-4 p-4">
+              <div className="flex flex-row justify-evenly py-4">
                 {/* Row 1 */}
-                <a>Send Message</a>
-                <a>Add to Friends</a>
+                <a href="mailto:bratton.dev@gmail.com">
+                  <Image
+                    src="/sendMailIcon.gif"
+                    alt="Send Message"
+                    height={35}
+                    width={138}
+                  />
+                </a>
+                <div
+                  onClick={async () => {
+                    console.log("clicked");
+                    try {
+                      await navigator.share({
+                        title: "Caleb Bratton",
+                        text: "Check out Caleb's resume!",
+                        url: "https://calebbratton.com",
+                      });
+                    } catch (err) {
+                      console.log(err);
+                    }
+                  }}
+                >
+                  <Image
+                    src="/forwardMailIcon.gif"
+                    alt="Forward to Friend"
+                    height={35}
+                    width={138}
+                  />
+                </div>
+                {/* <a>Add to Friends</a>
                 <a>Instant Message</a>
-                <a>Add to Group</a>
+                <a>Add to Group</a> */}
 
                 {/* Row 2 */}
-                <a>Forward to Friend</a>
-                <a>Add to Favorites</a>
+                {/* <a>Forward to Friend</a> */}
+                {/* <a>Add to Favorites</a>
                 <a>Block User</a>
-                <a>Rank User</a>
+                <a>Rank User</a> */}
               </div>
             </div>
 
