@@ -61,16 +61,11 @@ const Explorer = () => {
                 <div
                   className="cursor-pointer"
                   onClick={async () => {
-                    console.log("clicked");
-                    try {
-                      await navigator.share({
-                        title: "Caleb Bratton",
-                        text: "Check out Caleb's resume!",
-                        url: "https://calebbratton.com",
-                      });
-                    } catch (err) {
-                      console.log(err);
-                    }
+                    await navigator.share({
+                      title: "Caleb Bratton",
+                      text: "Check out Caleb's resume!",
+                      url: "https://calebbratton.com",
+                    });
                   }}
                 >
                   <Image
