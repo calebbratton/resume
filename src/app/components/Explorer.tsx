@@ -3,6 +3,7 @@ import WindowComponent from "./WindowComponent";
 import { LINKEDIN_URL } from "../helpers/linkedIn";
 import { oAuth } from "../helpers/Oauth";
 import { HtmlContext } from "next/dist/shared/lib/html-context";
+import { useSession } from "next-auth/react";
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,20 +14,6 @@ const Explorer = () => {
     (Number(new Date()) - Number(new Date("1992-12-10"))) / 31557600000
   );
 
-  const params = useSearchParams();
-
-  useEffect(() => {
-    const getUser = async () => {
-      const code = params.get("code");
-      if (code) {
-        const res = await oAuth(code);
-        setUser(res);
-      }
-    };
-    getUser();
-  }, []);
-
-  console.log(user);
   return (
     <WindowComponent
       className="mx-2 max-h-[80vh] max-w-[90vw] w-[1200px]"
