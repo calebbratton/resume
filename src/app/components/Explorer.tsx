@@ -229,7 +229,10 @@ const Explorer = () => {
               <div className="px-4 pt-4 pb-8 font-bold">
                 <span className="flex flex-row">
                   Displaying 0 of 0 comments (<a className="px-1">View All </a>|
-                  <a href={LINKEDIN_URL}>Add Comment</a>)
+                  <a href={LINKEDIN_URL} target="_blank">
+                    Add Comment
+                  </a>
+                  )
                 </span>
               </div>
             </div>
