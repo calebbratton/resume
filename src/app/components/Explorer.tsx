@@ -311,8 +311,7 @@ const Explorer = () => {
                       setMessage(e.target.value);
                     }}
                   />
-                  <input
-                    type="submit"
+                  <button
                     value="Add Comment"
                     onClick={() => {
                       let user;
