@@ -8,9 +8,10 @@ const handler = NextAuth({
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
       authorization: {
         params: {
-          scope: "profile",
+          scope: "profile email openid",
         },
       },
+      checks: ['none'],
       issuer: "https://www.linkedin.com",
       jwks_endpoint: "https://www.linkedin.com/oauth/openid/jwks",
       profile(profile, tokens) {
