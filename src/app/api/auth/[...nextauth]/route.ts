@@ -8,7 +8,7 @@ const handler = NextAuth({
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
       authorization: {
         params: {
-          scope: "profile",
+          scope: "profile email openid",
         },
       },
       checks: ["none"],
