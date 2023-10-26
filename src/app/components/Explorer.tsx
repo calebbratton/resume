@@ -313,7 +313,6 @@ const Explorer = () => {
                   />
                   <button
                     className="cursor-pointer"
-                    value="Add Comment"
                     onClick={() => {
                       let user;
                       if (data && data.user) {
@@ -326,7 +325,9 @@ const Explorer = () => {
                         addComment(user);
                       }
                     }}
-                  />
+                  >
+                    Submit
+                  </button>
                 </form>
                 {friendComments.length > 0
                   ? friendComments.map((comment, index) => {
