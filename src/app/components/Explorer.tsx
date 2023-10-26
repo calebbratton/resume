@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import WindowComponent from "./WindowComponent";
+import { signIn } from "next-auth/react"
 
 const Explorer = () => {
   const [user, setUser] = useState({});
@@ -210,9 +211,7 @@ const Explorer = () => {
               <div className="px-4 pt-4 pb-8 font-bold">
                 <span className="flex flex-row">
                   Displaying 0 of 0 comments (<a className="px-1">View All </a>|
-                  <a href="/api/auth/signin" target="_blank">
-                    Add Comment
-                  </a>
+                  <div className="text-blue-400" onClick={() => signIn("linkedin")}>Add Comment</div>
                   )
                 </span>
               </div>
