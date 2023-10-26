@@ -19,7 +19,7 @@ const Explorer = () => {
       title="Internet Explorer"
     >
       <div className="flex max-w-[1000px] w-full h-full flex-col bg-white font-verdana antialiased font-normal pb-4">
-        <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-blue-400">
+        <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-bannerBlue">
           <p className="text-white font-bold">Home</p> |{" "}
           <p className="text-white font-bold">Browse</p> |{" "}
           <p className="text-white font-bold">Search</p> |{" "}
@@ -55,8 +55,8 @@ const Explorer = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col shrink w-full mt-4 border-4 border-blue-400">
-              <div className="text-white font-bold px-4 bg-blue-400">
+            <div className="flex flex-col shrink w-full mt-4 border-4 border-bannerBlue">
+              <div className="text-white font-bold px-4 bg-bannerBlue">
                 Contacting Caleb
               </div>
               <div className="flex flex-row justify-evenly py-4">
@@ -98,31 +98,31 @@ const Explorer = () => {
               </div>
             </div>
 
-            <div className="mt-4 ">
-              <div className="text-white font-bold px-4 bg-blue-400">
+            <div className="mt-4 border-2 border-bannerBlue">
+              <div className="text-white font-bold px-4 bg-bannerBlue">
                 Caleb's Interests
               </div>
               <div className="grid grid-cols-4 pt-0.5 gap-0.5 grid-flow-row text-sm">
-                <div className="bg-blue-300 px-2 font-bold text-blue-600">
+                <div className="bg-detailTitleBg px-2 font-bold text-detailTitle">
                   General
                 </div>
-                <div className="bg-blue-200 px-2 col-span-3">
+                <div className="bg-detailInfoBg px-2 col-span-3">
                   I love coding, climbing, snowboarding, fall weather, music,
                   and my wife (hey babe).
                 </div>
-                <div className="bg-blue-300 px-2 font-bold text-blue-600">
+                <div className="bg-detailTitleBg px-2 font-bold text-detailTitle">
                   Work History
                 </div>
-                <div className="bg-blue-200 px-2 col-span-3">
+                <div className="bg-detailInfoBg px-2 col-span-3">
                   My current work at Dish Network has provided me with many
                   opportunities. I have worked on well-established backend
                   projects for Sling TV, as well as greenfield research
                   projects, taking an idea from zero to one.
                 </div>
-                <div className="bg-blue-300 px-2 font-bold text-blue-600">
+                <div className="bg-detailTitleBg px-2 font-bold text-detailTitle">
                   Music
                 </div>
-                <div className="bg-blue-200 px-2 col-span-3">
+                <div className="bg-detailInfoBg px-2 col-span-3">
                   I love everything; from hardcore, punk, and indie rock to
                   country, folk, and R&B. I find almost all music enjoyable. I
                   am currently listening to a lot of indie rock. Alex G and Men
@@ -138,11 +138,13 @@ const Explorer = () => {
               </div>
             </div>
             <div className="mt-4">
-              <div className="bg-orange-300 text-orange-700 font-bold text-base p-2">
+              <div className="bg-bannerOrange text-titleOrange font-bold text-base p-2">
                 Caleb's Blurbs
               </div>
               <div className="px-4 pt-4 pb-8">
-                <p className="text-orange-700 font-bold text-base">About Me:</p>
+                <p className="text-titleOrange font-bold text-base">
+                  About Me:
+                </p>
                 <p className="text-sm">
                   I'm Caleb, a versatile software engineer living in Denver,
                   Colorado. Before becoming an engineer, I was a flight
@@ -159,7 +161,7 @@ const Explorer = () => {
               </div>
             </div>
             <div>
-              <div className="bg-orange-300 text-orange-700 font-bold text-base p-2">
+              <div className="bg-bannerOrange text-titleOrange font-bold text-base p-2">
                 Caleb's Friend Space
               </div>
               <div className="mt-4">
@@ -209,7 +211,7 @@ const Explorer = () => {
               </div>
             </div>
             <div className="mt-4 pb-8">
-              <div className="bg-orange-300 text-orange-700 font-bold text-base p-2">
+              <div className="bg-bannerOrange text-titleOrange font-bold text-base p-2">
                 Caleb's Friends Comments
               </div>
               <div className="py-4 px-4 font-bold">
@@ -245,7 +247,7 @@ const Explorer = () => {
               </div>
               <div className="grid grid-cols-4 gap-1 h-30">
                 <div
-                  className={`flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-orange-300 ${
+                  className={`flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-profileOrange ${
                     commenting ? "" : "hidden"
                   }`}
                 >
@@ -271,7 +273,7 @@ const Explorer = () => {
                 {friendComments.map((comment, index) => {
                   return (
                     <Fragment key={comment.name + index}>
-                      <div className="flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-orange-300">
+                      <div className="flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-profileOrange">
                         <p className="text-sm text-blue-700">{comment.name}</p>
                         <Image
                           src={comment.image as string}
@@ -280,7 +282,7 @@ const Explorer = () => {
                           width={100}
                         />
                       </div>
-                      <div className="flex bg-orange-100 items-center text-sm p-4 col-span-3">
+                      <div className="flex bg-message items-center text-sm p-4 col-span-3">
                         <p>{comment.message}</p>
                       </div>
                     </Fragment>

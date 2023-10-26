@@ -8,13 +8,21 @@
     --color-secondary: 164 58 58;
     --color-background: 1 130 129;
     --color-foreground: 252 252 255;
+    --color-title: 255 102 0;
+    --color-banner: 255 204 153;
+    --color-profile: 255 153 51;
+    --color-message: 249 214 180;
+    --color-detail-banner: 102 153 204;
+    --color-detail-title: 51 102 153;
+    --color-detail-title-bg: 177 208 240;
+    --color-detail-info-bg: 213 232 251;
   }
-  :root[class~='dark'] {
+  /* :root[class~='dark'] {
     --color-primary: 150 0 0;
     --color-secondary: 164 58 58;
     --color-background: 32 34 40;
     --color-foreground: 80 80 80;
-  }
+  } */
 
   @font-face {
     font-family: "StarWars";
