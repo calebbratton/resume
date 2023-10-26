@@ -1,10 +1,14 @@
 import Image from "next/image";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import WindowComponent from "./WindowComponent";
-import { signIn } from "next-auth/react"
+import { signIn, signOut, useSession } from "next-auth/react";
+import { LINKEDIN_URL } from "../helpers/linkedIn";
+import { FriendComment } from "@/types/main";
 
 const Explorer = () => {
-  const [user, setUser] = useState({});
+  const { status, data } = useSession();
+  const [friendComments, setFriendComments] = useState<FriendComment[]>([]);
+  const [commenting, setCommenting] = useState(false);
   const age = Math.floor(
     (Number(new Date()) - Number(new Date("1992-12-10"))) / 31557600000
   );
@@ -14,7 +18,7 @@ const Explorer = () => {
       className="mx-2 max-h-[80vh] max-w-[90vw] w-[1200px]"
       title="Internet Explorer"
     >
-      <div className="flex max-w-[1000px] w-full flex-col bg-white font-verdana antialiased font-normal pb-4">
+      <div className="flex max-w-[1000px] w-full h-full flex-col bg-white font-verdana antialiased font-normal pb-4">
         <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-blue-400">
           <p className="text-white font-bold">Home</p> |{" "}
           <p className="text-white font-bold">Browse</p> |{" "}
@@ -204,16 +208,84 @@ const Explorer = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 pb-8">
               <div className="bg-orange-300 text-orange-700 font-bold text-base p-2">
                 Caleb's Friends Comments
               </div>
-              <div className="px-4 pt-4 pb-8 font-bold">
-                <span className="flex flex-row">
-                  Displaying 0 of 0 comments (<a className="px-1">View All </a>|
-                  <div className="text-blue-400" onClick={() => signIn("linkedin")}>Add Comment</div>
-                  )
-                </span>
+              <div className="py-4 px-4 font-bold">
+                <div className="flex flex-row justify-between">
+                  <div className="flex flex-row">
+                    Displaying 0 of 0 comments (
+                    <p className=" text-blue-700 px-1">View All </p>|
+                    <div className="flex flex-col">
+                      <p
+                        className="cursor-pointer text-blue-700 px-1"
+                        onClick={() => {
+                          if (status === "authenticated") {
+                            setCommenting(!commenting);
+                          } else {
+                            signIn("linkedin");
+                          }
+                        }}
+                      >
+                        Add Comment{" )"}
+                      </p>
+                      <p className="text-[8px]">(requires LinkedIn sign in)</p>
+                    </div>
+                  </div>
+                  <div
+                    className={`${
+                      status !== "authenticated" ? "hidden" : ""
+                    } cursor-pointer text-blue-700`}
+                    onClick={() => signOut()}
+                  >
+                    Sign Out
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-4 gap-1 h-30">
+                <div
+                  className={`flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-orange-300 ${
+                    commenting ? "" : "hidden"
+                  }`}
+                >
+                  <p className="text-sm text-blue-700">{data?.user?.name}</p>
+                  <Image
+                    src={data?.user?.image as string}
+                    alt="user image"
+                    height={100}
+                    width={100}
+                  />
+                </div>
+                <form
+                  className={`${
+                    commenting ? "" : "hidden"
+                  } bg-white items-center text-sm flex flex-col justify-end font-veranda col-span-3`}
+                >
+                  <textarea
+                    className="h-full w-full"
+                    placeholder="Add your comment"
+                  />
+                  <input type="submit" value="Send" />
+                </form>
+                {friendComments.map((comment, index) => {
+                  return (
+                    <Fragment key={comment.name + index}>
+                      <div className="flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-orange-300">
+                        <p className="text-sm text-blue-700">{comment.name}</p>
+                        <Image
+                          src={comment.image as string}
+                          alt="user image"
+                          height={100}
+                          width={100}
+                        />
+                      </div>
+                      <div className="flex bg-orange-100 items-center text-sm p-4 col-span-3">
+                        <p>{comment.message}</p>
+                      </div>
+                    </Fragment>
+                  );
+                })}
               </div>
             </div>
           </div>
