@@ -20,7 +20,7 @@ export async function GET() {
   const client = await mongoConnect();
   const collection = client.db("resume").collection("comments");
 
-  const documents = await collection.find({}).toArray();
+  const documents = await collection.find({}).sort({ createdAt: -1 }).toArray();
 
   return NextResponse.json(documents);
 }

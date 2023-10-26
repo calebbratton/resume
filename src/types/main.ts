@@ -8,5 +8,5 @@ export interface FriendComment {
   name: string;
   image: string;
   message: string;
-  createdAt: string;
+  createdAt: Date;
 }

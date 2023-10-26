@@ -17,7 +17,7 @@ const Explorer = () => {
     name: string;
     image: string;
     message: string;
-    createdAt: string;
+    createdAt: Date;
   }) => {
     if (user) {
       const res = await fetch("/api/comment/", {
@@ -282,7 +282,9 @@ const Explorer = () => {
               <div className="grid grid-cols-4 gap-1 h-30">
                 <div
                   className={`flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-profileOrange ${
-                    commenting ? "" : "hidden"
+                    status === "authenticated" || status === "loading"
+                      ? ""
+                      : "hidden"
                   }`}
                 >
                   <p className="text-sm text-blue-700">{data?.user?.name}</p>
@@ -295,10 +297,13 @@ const Explorer = () => {
                 </div>
                 <form
                   className={`${
-                    commenting && status == "authenticated" ? "" : "hidden"
+                    status === "authenticated" || status === "loading"
+                      ? ""
+                      : "hidden"
                   } bg-white items-center text-sm flex flex-col justify-end font-veranda col-span-3`}
                 >
                   <textarea
+                    id="comment"
                     className="h-full w-full"
                     placeholder="Add your comment"
                     value={message}
@@ -316,7 +321,7 @@ const Explorer = () => {
                           name: data.user?.name || "",
                           image: data.user?.image || "",
                           message: message,
-                          createdAt: Date.now().toLocaleString("en-US"),
+                          createdAt: new Date(),
                         };
                         addComment(user);
                       }
@@ -341,7 +346,11 @@ const Explorer = () => {
                           <div className="flex bg-message items-center text-sm p-4 col-span-3">
                             <div className="flex flex-col">
                               <p className="text-xs font-bold pb-4">
-                                {comment.createdAt ? comment.createdAt : null}
+                                {comment.createdAt
+                                  ? new Date(
+                                      comment.createdAt
+                                    ).toLocaleDateString("en-US")
+                                  : null}
                               </p>
                               <p>{comment.message}</p>
                             </div>
