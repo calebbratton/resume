@@ -246,7 +246,8 @@ const Explorer = () => {
               <div className="py-4 px-4 font-bold">
                 <div className="flex flex-row flex-wrap justify-between">
                   <div className="flex flex-row flex-wrap">
-                    Displaying 0 of 0 comments{" "}
+                    Displaying {friendComments.length} of{" "}
+                    {friendComments.length} comments{" "}
                     <div className="flex flex-row">
                       (<p className=" text-blue-700 px-1">View All </p>|
                       <div className="flex flex-col">
