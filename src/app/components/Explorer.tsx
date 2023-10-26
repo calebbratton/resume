@@ -283,7 +283,8 @@ const Explorer = () => {
               <div className="grid grid-cols-4 gap-1 h-30">
                 <div
                   className={`flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-profileOrange ${
-                    status === "authenticated" || status === "loading"
+                    (status === "authenticated" || status === "loading") &&
+                    commenting
                       ? ""
                       : "hidden"
                   }`}
@@ -298,7 +299,8 @@ const Explorer = () => {
                 </div>
                 <div
                   className={`${
-                    status === "authenticated" || status === "loading"
+                    (status === "authenticated" || status === "loading") &&
+                    commenting
                       ? ""
                       : "hidden"
                   } bg-white items-center text-sm flex flex-col justify-end font-veranda col-span-3`}
@@ -314,14 +316,15 @@ const Explorer = () => {
                   />
                   <button
                     className="cursor-pointer"
-                    onClick={() =>
+                    onClick={() => {
                       addComment({
                         name: data?.user?.name || "",
                         image: data?.user?.image || "",
                         message: message,
                         createdAt: new Date(),
-                      })
-                    }
+                      });
+                      setCommenting(false);
+                    }}
                   >
                     Submit
                   </button>
@@ -345,9 +348,17 @@ const Explorer = () => {
                             <div className="flex flex-col">
                               <p className="text-xs font-bold pb-4">
                                 {comment.createdAt
-                                  ? new Date(
-                                      comment.createdAt
-                                    ).toLocaleDateString("en-US")
+                                  ? new Date(comment.createdAt).toLocaleString(
+                                      "en-US",
+                                      {
+                                        year: "numeric",
+                                        month: "long",
+                                        // weekday: "long",
+                                        day: "2-digit",
+                                        hour: "2-digit",
+                                        minute: "2-digit",
+                                      }
+                                    )
                                   : null}
                               </p>
                               <p>{comment.message}</p>
