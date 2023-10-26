@@ -1,18 +1,45 @@
 import Image from "next/image";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import WindowComponent from "./WindowComponent";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { LINKEDIN_URL } from "../helpers/linkedIn";
 import { FriendComment } from "@/types/main";
 
 const Explorer = () => {
   const { status, data } = useSession();
   const [friendComments, setFriendComments] = useState<FriendComment[]>([]);
   const [commenting, setCommenting] = useState(false);
+  const [message, setMessage] = useState("");
   const age = Math.floor(
     (Number(new Date()) - Number(new Date("1992-12-10"))) / 31557600000
   );
 
+  const addComment = async (user: {
+    name: string;
+    image: string;
+    message: string;
+  }) => {
+    if (user) {
+      const res = await fetch("/api/comment/", {
+        method: "POST",
+        body: JSON.stringify({
+          name: user.name,
+          image: user.image,
+          message: message,
+        }),
+      });
+    }
+  };
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      const res = await fetch("/api/comment/", { method: "GET" });
+
+      const comments = await res.json();
+      setFriendComments(comments);
+    };
+
+    fetchComments();
+  }, []);
   return (
     <WindowComponent
       className="mx-2 max-h-[80vh] max-w-[90vw] w-[1200px]"
@@ -271,27 +298,49 @@ const Explorer = () => {
                   <textarea
                     className="h-full w-full"
                     placeholder="Add your comment"
+                    value={message}
+                    onChange={(e) => {
+                      setMessage(e.target.value);
+                    }}
                   />
-                  <input type="submit" value="Send" />
+                  <input
+                    type="submit"
+                    value="Add Comment"
+                    onClick={() => {
+                      let user;
+                      if (data && data.user) {
+                        user = {
+                          name: data.user?.name || "",
+                          image: data.user?.image || "",
+                          message: message,
+                        };
+                        addComment(user);
+                      }
+                    }}
+                  />
                 </form>
-                {friendComments.map((comment, index) => {
-                  return (
-                    <Fragment key={comment.name + index}>
-                      <div className="flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-profileOrange">
-                        <p className="text-sm text-blue-700">{comment.name}</p>
-                        <Image
-                          src={comment.image as string}
-                          alt="user image"
-                          height={100}
-                          width={100}
-                        />
-                      </div>
-                      <div className="flex bg-message items-center text-sm p-4 col-span-3">
-                        <p>{comment.message}</p>
-                      </div>
-                    </Fragment>
-                  );
-                })}
+                {friendComments.length > 0
+                  ? friendComments.map((comment, index) => {
+                      return (
+                        <Fragment key={comment.name + index}>
+                          <div className="flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-profileOrange">
+                            <p className="text-sm text-blue-700">
+                              {comment.name}
+                            </p>
+                            <Image
+                              src={comment.image as string}
+                              alt="user image"
+                              height={100}
+                              width={100}
+                            />
+                          </div>
+                          <div className="flex bg-message items-center text-sm p-4 col-span-3">
+                            <p>{comment.message}</p>
+                          </div>
+                        </Fragment>
+                      );
+                    })
+                  : null}
               </div>
             </div>
           </div>
