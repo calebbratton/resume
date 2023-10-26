@@ -7,6 +7,7 @@ const lora = Lora({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
   title: "Caleb Bratton",
   description: "Caleb Bratton Resume",
+  icons: "/cb.png",
 };
 
 export default function RootLayout({
