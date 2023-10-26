@@ -215,24 +215,28 @@ const Explorer = () => {
                 Caleb's Friends Comments
               </div>
               <div className="py-4 px-4 font-bold">
-                <div className="flex flex-row justify-between">
-                  <div className="flex flex-row">
-                    Displaying 0 of 0 comments (
-                    <p className=" text-blue-700 px-1">View All </p>|
-                    <div className="flex flex-col">
-                      <p
-                        className="cursor-pointer text-blue-700 px-1"
-                        onClick={() => {
-                          if (status === "authenticated") {
-                            setCommenting(!commenting);
-                          } else {
-                            signIn("linkedin");
-                          }
-                        }}
-                      >
-                        Add Comment{" )"}
-                      </p>
-                      <p className="text-[8px]">(requires LinkedIn sign in)</p>
+                <div className="flex flex-row flex-wrap justify-between">
+                  <div className="flex flex-row flex-wrap">
+                    Displaying 0 of 0 comments{" "}
+                    <div className="flex flex-row">
+                      (<p className=" text-blue-700 px-1">View All </p>|
+                      <div className="flex flex-col">
+                        <p
+                          className="cursor-pointer text-blue-700 px-1"
+                          onClick={() => {
+                            if (status === "authenticated") {
+                              setCommenting(!commenting);
+                            } else {
+                              signIn("linkedin");
+                            }
+                          }}
+                        >
+                          Add Comment{" )"}
+                        </p>
+                        <p className="text-[8px]">
+                          (requires LinkedIn sign in)
+                        </p>
+                      </div>
                     </div>
                   </div>
                   <div
