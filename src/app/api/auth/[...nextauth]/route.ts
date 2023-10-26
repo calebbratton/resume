@@ -13,9 +13,6 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  theme: {
-    colorScheme: "light",
-  },
   callbacks: {
     async jwt({ token }) {
       token.userRole = "admin";
@@ -24,4 +21,6 @@ export const authOptions: NextAuthOptions = {
   },
 };
 
-export default NextAuth(authOptions);
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };

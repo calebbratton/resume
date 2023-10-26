@@ -3,7 +3,6 @@ import WindowComponent from "./WindowComponent";
 import { LINKEDIN_URL } from "../helpers/linkedIn";
 import { oAuth } from "../helpers/Oauth";
 import { HtmlContext } from "next/dist/shared/lib/html-context";
-import { useSession, signIn } from "next-auth/react";
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
