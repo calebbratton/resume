@@ -312,6 +312,7 @@ const Explorer = () => {
                     }}
                   />
                   <button
+                    className="cursor-pointer"
                     value="Add Comment"
                     onClick={() => {
                       let user;
