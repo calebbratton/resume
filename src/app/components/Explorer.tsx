@@ -3,7 +3,7 @@ import WindowComponent from "./WindowComponent";
 import { LINKEDIN_URL } from "../helpers/linkedIn";
 import { oAuth } from "../helpers/Oauth";
 import { HtmlContext } from "next/dist/shared/lib/html-context";
-import { useSession } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -216,7 +216,7 @@ const Explorer = () => {
               <div className="px-4 pt-4 pb-8 font-bold">
                 <span className="flex flex-row">
                   Displaying 0 of 0 comments (<a className="px-1">View All </a>|
-                  <a href={LINKEDIN_URL} target="_blank">
+                  <a href="/api/auth/signin" target="_blank">
                     Add Comment
                   </a>
                   )
