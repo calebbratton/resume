@@ -13,12 +13,12 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  callbacks: {
-    async jwt({ token }) {
-      token.userRole = "admin";
-      return token;
-    },
-  },
+  // callbacks: {
+  //   async jwt({ token }) {
+  //     token.userRole = "admin";
+  //     return token;
+  //   },
+  // },
 };
 
 const handler = NextAuth(authOptions);
