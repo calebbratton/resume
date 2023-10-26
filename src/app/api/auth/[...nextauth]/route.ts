@@ -1,7 +1,7 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import LinkedinProvider from "next-auth/providers/linkedin";
 
-export const authOptions: NextAuthOptions = {
+const handler = NextAuth({
   providers: [
     LinkedinProvider({
       clientId: process.env.LINKEDIN_CLIENT_ID!,
@@ -19,8 +19,6 @@ export const authOptions: NextAuthOptions = {
   //     return token;
   //   },
   // },
-};
-
-const handler = NextAuth(authOptions);
+});
 
 export { handler as GET, handler as POST };
