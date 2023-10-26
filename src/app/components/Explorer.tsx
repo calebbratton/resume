@@ -295,7 +295,7 @@ const Explorer = () => {
                     width={100}
                   />
                 </div>
-                <form
+                <div
                   className={`${
                     status === "authenticated" || status === "loading"
                       ? ""
@@ -313,22 +313,18 @@ const Explorer = () => {
                   />
                   <button
                     className="cursor-pointer"
-                    onClick={() => {
-                      let user;
-                      if (data && data.user) {
-                        user = {
-                          name: data.user?.name || "",
-                          image: data.user?.image || "",
-                          message: message,
-                          createdAt: new Date(),
-                        };
-                        addComment(user);
-                      }
-                    }}
+                    onClick={() =>
+                      addComment({
+                        name: data?.user?.name || "",
+                        image: data?.user?.image || "",
+                        message: message,
+                        createdAt: new Date(),
+                      })
+                    }
                   >
                     Submit
                   </button>
-                </form>
+                </div>
                 {friendComments.length > 0
                   ? friendComments.map((comment, index) => {
                       return (
