@@ -17,6 +17,7 @@ const Explorer = () => {
     name: string;
     image: string;
     message: string;
+    createdAt: string;
   }) => {
     if (user) {
       const res = await fetch("/api/comment/", {
@@ -25,6 +26,7 @@ const Explorer = () => {
           name: user.name,
           image: user.image,
           message: message,
+          createdAt: user.createdAt,
         }),
       });
     }
@@ -292,7 +294,7 @@ const Explorer = () => {
                 </div>
                 <form
                   className={`${
-                    commenting ? "" : "hidden"
+                    commenting && status == "authenticated" ? "" : "hidden"
                   } bg-white items-center text-sm flex flex-col justify-end font-veranda col-span-3`}
                 >
                   <textarea
@@ -313,6 +315,7 @@ const Explorer = () => {
                           name: data.user?.name || "",
                           image: data.user?.image || "",
                           message: message,
+                          createdAt: Date.now().toLocaleString("en-US"),
                         };
                         addComment(user);
                       }
@@ -335,7 +338,12 @@ const Explorer = () => {
                             />
                           </div>
                           <div className="flex bg-message items-center text-sm p-4 col-span-3">
-                            <p>{comment.message}</p>
+                            <div className="flex flex-col">
+                              <p className="text-xs font-bold pb-4">
+                                {comment.createdAt ? comment.createdAt : null}
+                              </p>
+                              <p>{comment.message}</p>
+                            </div>
                           </div>
                         </Fragment>
                       );

@@ -10,6 +10,7 @@ export async function POST(req: NextRequest) {
     name: body.name,
     image: body.image,
     message: body.message,
+    createdAt: body.createdAt,
   });
 
   return NextResponse.json(result);
