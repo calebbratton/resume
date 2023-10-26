@@ -13,6 +13,13 @@ const Explorer = () => {
     (Number(new Date()) - Number(new Date("1992-12-10"))) / 31557600000
   );
 
+  const fetchComments = async () => {
+    const res = await fetch("/api/comment/", { method: "GET" });
+
+    const comments = await res.json();
+    setFriendComments(comments);
+  };
+
   const addComment = async (user: {
     name: string;
     image: string;
@@ -20,7 +27,7 @@ const Explorer = () => {
     createdAt: Date;
   }) => {
     if (user) {
-      const res = await fetch("/api/comment/", {
+      await fetch("/api/comment/", {
         method: "POST",
         body: JSON.stringify({
           name: user.name,
@@ -29,17 +36,11 @@ const Explorer = () => {
           createdAt: user.createdAt,
         }),
       });
+      fetchComments();
     }
   };
 
   useEffect(() => {
-    const fetchComments = async () => {
-      const res = await fetch("/api/comment/", { method: "GET" });
-
-      const comments = await res.json();
-      setFriendComments(comments);
-    };
-
     fetchComments();
   }, []);
   return (
