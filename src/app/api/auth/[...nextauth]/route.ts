@@ -8,17 +8,16 @@ const handler = NextAuth({
       clientSecret: process.env.LINKEDIN_CLIENT_SECRET!,
       authorization: {
         params: {
-          scope: "profile email",
+          scope: "profile",
         },
       },
     }),
   ],
-  // callbacks: {
-  //   async jwt({ token }) {
-  //     token.userRole = "admin";
-  //     return token;
-  //   },
-  // },
+  callbacks: {
+    session({ session, token, user }) {
+      return session; // The return type will match the one returned in `useSession()`
+    },
+  },
 });
 
 export { handler as GET, handler as POST };
