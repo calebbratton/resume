@@ -144,7 +144,7 @@ const Explorer = () => {
                   Work History
                 </div>
                 <div className="bg-detailInfoBg px-2 col-span-3">
-                  My current work at Dish Network has provided me with many
+                  My current role has provided me with many
                   opportunities. I have worked on well-established backend
                   projects for Sling TV, as well as greenfield research
                   projects, taking an idea from zero to one.
