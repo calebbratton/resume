@@ -16,8 +16,21 @@ const Explorer = () => {
   const fetchComments = async () => {
     const res = await fetch("/api/comment/", { method: "GET" });
 
-    const comments = await res.json();
-    setFriendComments(comments);
+    let comments = await res.json();
+    const c = comments.map((c: FriendComment) => {
+      return {
+        ...c,
+        createdAt: new Date(c.createdAt).toLocaleString("en-US", {
+          year: "numeric",
+          month: "long",
+          // weekday: "long",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+      };
+    });
+    setFriendComments(c);
   };
 
   const addComment = async (user: {
@@ -229,7 +242,7 @@ const Explorer = () => {
                       >
                         <p>{item.name}</p>
                         <Image
-                          src={item.src}
+                          src={item.src || "/defaultProfile.jpg"}
                           alt={item.name}
                           height={80}
                           width={80}
@@ -291,7 +304,7 @@ const Explorer = () => {
                 >
                   <p className="text-sm text-blue-700">{data?.user?.name}</p>
                   <Image
-                    src={data?.user?.image as string}
+                    src={data?.user?.image || "/defaultProfile.jpg"}
                     alt="user image"
                     height={100}
                     width={100}
@@ -347,19 +360,7 @@ const Explorer = () => {
                           <div className="flex bg-message items-center text-sm p-4 col-span-3">
                             <div className="flex flex-col">
                               <p className="text-xs font-bold pb-4">
-                                {comment.createdAt
-                                  ? new Date(comment.createdAt).toLocaleString(
-                                      "en-US",
-                                      {
-                                        year: "numeric",
-                                        month: "long",
-                                        // weekday: "long",
-                                        day: "2-digit",
-                                        hour: "2-digit",
-                                        minute: "2-digit",
-                                      }
-                                    )
-                                  : null}
+                                {comment.createdAt ? comment.createdAt : null}
                               </p>
                               <p>{comment.message}</p>
                             </div>

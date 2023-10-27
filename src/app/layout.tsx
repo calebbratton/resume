@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
+import { StrictMode } from "react";
 
 const lora = Lora({ subsets: ["latin"], weight: "400" });
 
