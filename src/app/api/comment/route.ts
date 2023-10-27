@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     createdAt: body.createdAt,
   });
 
-  return NextResponse.json("result");
+  return NextResponse.json(result);
 }
 
 export async function GET() {
