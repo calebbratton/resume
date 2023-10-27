@@ -62,8 +62,16 @@ const Explorer = () => {
       title="Internet Explorer"
     >
       <div className="flex max-w-[1000px] w-full h-full flex-col bg-white font-verdana antialiased font-normal pb-4">
-        <div className="flex px-8 flex-row flex-wrap justify-between py-2 items-center bg-bannerBlue">
-          <p className="text-white font-bold">Home</p> |{" "}
+        <div className="flex px-4 py-2 flex-row text-white flex-wrap items-center bg-blue-700">
+          <div className="flex flex-col">
+            <p className="font-bold text-base">CalebSpace</p>
+            <p className="text-[8px]">
+              a tribute to MySpace, where my coding journey started
+            </p>
+          </div>
+        </div>
+        <div className="flex px-8 h-6 flex-row flex-wrap justify-between py-2 items-center bg-bannerBlue" />
+        {/* <p className="text-white font-bold">Home</p> |{" "}
           <p className="text-white font-bold">Browse</p> |{" "}
           <p className="text-white font-bold">Search</p> |{" "}
           <p className="text-white font-bold">Invite</p> |{" "}
@@ -76,8 +84,8 @@ const Explorer = () => {
           <p className="text-white font-bold">Events</p> |{" "}
           <p className="text-white font-bold">Videos</p> |{" "}
           <p className="text-white font-bold">Music</p> |{" "}
-          <p className="text-white font-bold">Classifieds</p>
-        </div>
+          <p className="text-white font-bold">Classifieds</p> */}
+        <div />
         <div className="flex lg:flex-row md:flex-row flex-col pt-4">
           <div className="flex flex-col px-4 w-full md:w-2/3">
             <div className="flex flex-row">
@@ -157,10 +165,10 @@ const Explorer = () => {
                   Work History
                 </div>
                 <div className="bg-detailInfoBg px-2 col-span-3">
-                  My current role has provided me with many
-                  opportunities. I have worked on well-established backend
-                  projects for Sling TV, as well as greenfield research
-                  projects, taking an idea from zero to one.
+                  My current role has provided me with many opportunities. I
+                  have worked on well-established backend projects for Sling TV,
+                  as well as greenfield research projects, taking an idea from
+                  zero to one.
                 </div>
                 <div className="bg-detailTitleBg px-2 font-bold text-detailTitle">
                   Music
