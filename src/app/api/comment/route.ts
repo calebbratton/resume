@@ -11,16 +11,9 @@ export async function POST(req: NextRequest) {
     const collection = mongoClient.db("resume").collection("comments");
     const authToken = process.env.TWILIO_TOKEN;
     const accountSid = process.env.TWILIO_SID;
-    const twilioNumber = process.env.TWILIO_NUMBER;
+    const twilioMessageSid = process.env.TWILIO_MESSAGE_ID;
     const myNumber = process.env.TWILIO_PERSONAL;
     const client = Twilio(accountSid, authToken);
-    client.messages
-      .create({
-        body: `"${body.message}" - ${body.name}` || "error",
-        from: twilioNumber,
-        to: myNumber,
-      })
-      .then((message) => console.log(message.sid));
 
     const result = await collection.insertOne({
       name: body.name,
@@ -29,6 +22,13 @@ export async function POST(req: NextRequest) {
       createdAt: body.createdAt,
     });
 
+    client.messages
+      .create({
+        body: `"${body.message}" - ${body.name}` || "error",
+        messagingServiceSid: twilioMessageSid,
+        to: myNumber,
+      })
+      .then((message) => console.log(message.sid));
     return NextResponse.json(result);
   }
   return NextResponse.json("No session found, please log in");
