@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
-import { StrictMode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const lora = Lora({ subsets: ["latin"], weight: "400" });
 
@@ -18,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-background overflow h-full">{children}</body>
+      <body className="bg-background overflow h-full">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
