@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import client from "../auth/[...nextauth]/database/mongoConnect";
 import { getServerSession } from "next-auth";
-// import Twilio from "twilio";
+import Twilio from "twilio";
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession();
@@ -9,11 +9,11 @@ export async function POST(req: NextRequest) {
     // const mongoClient = await db.connect();
     const body = await req.json();
     const collection = client.db("resume").collection("comments");
-    // const authToken = process.env.TWILIO_TOKEN;
-    // const accountSid = process.env.TWILIO_SID;
-    // const twilioNumber = process.env.TWILIO_NUMBER;
-    // const myNumber = process.env.TWILIO_PERSONAL;
-    // const client = Twilio(accountSid, authToken);
+    const authToken = process.env.TWILIO_TOKEN;
+    const accountSid = process.env.TWILIO_SID;
+    const twilioNumber = process.env.TWILIO_NUMBER;
+    const myNumber = process.env.TWILIO_PERSONAL;
+    const twilioClient = Twilio(accountSid, authToken);
     // client.messages
     //   .create({
     //     body: `"${body.message}" - ${body.name}` || "error",
@@ -29,6 +29,13 @@ export async function POST(req: NextRequest) {
       createdAt: body.createdAt,
     });
 
+    twilioClient.messages
+      .create({
+        body: `"${body.message}" - ${body.name}` || "error",
+        from: twilioNumber,
+        to: myNumber,
+      })
+      .then((message) => console.log(message.sid));
     return NextResponse.json(result);
   }
   return NextResponse.json("No session found, please log in");
