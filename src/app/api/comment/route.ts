@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import mongoConnect from "../auth/[...nextauth]/database/mongoConnect";
+import client from "../auth/[...nextauth]/database/mongoConnect";
 import { getServerSession } from "next-auth";
 // import Twilio from "twilio";
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession();
   if (session) {
-    const mongoClient = await mongoConnect();
+    // const mongoClient = await db.connect();
     const body = await req.json();
-    const collection = mongoClient.db("resume").collection("comments");
+    const collection = client.db("resume").collection("comments");
     // const authToken = process.env.TWILIO_TOKEN;
     // const accountSid = process.env.TWILIO_SID;
     // const twilioNumber = process.env.TWILIO_NUMBER;
@@ -35,7 +35,6 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  const client = await mongoConnect();
   const collection = client.db("resume").collection("comments");
 
   const documents = await collection.find({}).sort({ createdAt: -1 }).toArray();
