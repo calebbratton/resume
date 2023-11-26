@@ -6,7 +6,7 @@ import "98.css";
 import { Fragment, ReactNode, useState } from "react";
 import { AppWindow } from "@/types/main";
 import { WindowContext } from "../context/context";
-import Explorer from "./components/Explorer";
+import Explorer from "./components/Explorer/Explorer";
 import SkillsWindow from "./components/ResumeWindow";
 import { NextAuthProvider } from "./AuthProvider";
 
