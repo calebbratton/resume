@@ -174,18 +174,17 @@ const Comments = () => {
                       <p>{comment.message}</p>
                     </div>
                     {session && (
-                      <div className="flex w-full flex-row justify-end">
-                        <a
-                          className={`${
-                            session?.user.email === "calebabratton@gmail.com" &&
-                            session.user.email
-                              ? ""
-                              : "hidden"
-                          }`}
-                          onClick={() => deleteComment(comment.id)}
-                        >
+                      <div
+                        className={`${
+                          session?.user.email === "calebabratton@gmail.com" &&
+                          session.user.email
+                            ? ""
+                            : "hidden"
+                        } flex w-full flex-row justify-end text-blue-700 cursor-pointer`}
+                      >
+                        <p onClick={() => deleteComment(comment.id)}>
                           Delete Comment
-                        </a>
+                        </p>
                       </div>
                     )}
                   </div>
