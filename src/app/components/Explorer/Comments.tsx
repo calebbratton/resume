@@ -180,11 +180,10 @@ const Comments = () => {
                           session.user.email
                             ? ""
                             : "hidden"
-                        } flex w-full flex-row justify-end cursor-pointer`}
+                        } max-w-content inline-flex text-blue-700 text-xs cursor-pointer ml-auto`}
+                        onClick={() => deleteComment(comment.id)}
                       >
-                        <button onClick={() => deleteComment(comment.id)}>
-                          Delete Comment
-                        </button>
+                        Delete Comment
                       </div>
                     )}
                   </div>
