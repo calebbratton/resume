@@ -174,17 +174,17 @@ const Comments = () => {
                       <p>{comment.message}</p>
                     </div>
                     {session && (
-                      <div
+                      <button
                         className={`${
                           session?.user.email === "calebabratton@gmail.com" &&
                           session.user.email
                             ? ""
                             : "hidden"
-                        } max-w-content inline-flex text-blue-700 text-xs cursor-pointer ml-auto`}
+                        } max-w-content text-xs cursor-pointer ml-auto`}
                         onClick={() => deleteComment(comment.id)}
                       >
                         Delete Comment
-                      </div>
+                      </button>
                     )}
                   </div>
                 </Fragment>

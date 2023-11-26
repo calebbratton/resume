@@ -78,15 +78,6 @@ const Explorer = () => {
                     width={138}
                   />
                 </div>
-                {/* <a>Add to Friends</a>
-                <a>Instant Message</a>
-                <a>Add to Group</a> */}
-
-                {/* Row 2 */}
-                {/* <a>Forward to Friend</a> */}
-                {/* <a>Add to Favorites</a>
-                <a>Block User</a>
-                <a>Rank User</a> */}
               </div>
             </div>
 
