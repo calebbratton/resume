@@ -181,7 +181,9 @@ const Comments = () => {
                             ? ""
                             : "hidden"
                         } max-w-content text-xs cursor-pointer ml-auto`}
-                        onClick={() => deleteComment(comment.id)}
+                        onClick={() => {
+                          deleteComment(comment.id);
+                        }}
                       >
                         Delete Comment
                       </button>
