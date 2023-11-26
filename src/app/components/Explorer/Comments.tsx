@@ -180,7 +180,7 @@ const Comments = () => {
                           session.user.email
                             ? ""
                             : "hidden"
-                        } max-w-content text-xs cursor-pointer ml-auto`}
+                        } cursor-pointer ml-auto`}
                         onClick={() => {
                           deleteComment(comment.id);
                         }}
