@@ -21,7 +21,7 @@ const Explorer = () => {
           <div className="flex flex-col">
             <p className="font-bold text-base">CalebSpace</p>
             <p className="text-[8px]">
-              a tribute to MySpace, where my coding journey started
+              a tribute to MySpace, where my coding journey began
             </p>
           </div>
         </div>
