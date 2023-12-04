@@ -27,7 +27,9 @@ export async function POST(req: NextRequest) {
 }
 
 export async function GET() {
-  const docs = await prisma.comments.findMany();
+  const docs = await prisma.comments.findMany({
+    orderBy: { createdAt: "desc" },
+  });
 
   return NextResponse.json(docs);
 }
