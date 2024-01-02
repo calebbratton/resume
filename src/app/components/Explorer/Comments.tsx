@@ -160,7 +160,11 @@ const Comments = () => {
                   <div className="flex col-span-1 p-4 flex-col gap-y-2 items-center justify-center bg-profileOrange">
                     <p className="text-sm text-blue-700">{comment.name}</p>
                     <Image
-                      src={comment.image as string}
+                      src={
+                        comment.image
+                          ? comment.image
+                          : ("./defaultProfile" as string)
+                      }
                       alt="user image"
                       height={100}
                       width={100}
