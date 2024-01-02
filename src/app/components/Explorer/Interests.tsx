@@ -17,8 +17,8 @@ const Interests = () => {
         </div>
         <div className="bg-detailInfoBg px-2 col-span-3">
           My current role has provided me with many opportunities. I have worked
-          on well-established backend projects for Sling TV, as well as
-          greenfield research projects, taking an idea from zero to one.
+          on well-established backend microservices, as well as full stack green
+          field projects, taking an idea from zero to one.
         </div>
         <div className="bg-detailTitleBg px-2 font-bold text-detailTitle">
           Music
