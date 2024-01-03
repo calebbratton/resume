@@ -5,6 +5,7 @@ import { uploadImageToS3 } from "../helpers/s3Bucket";
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession();
+  var imageUrl = "/defaultProfile.jpg";
   if (session) {
     const body: {
       name: string;
@@ -14,38 +15,59 @@ export async function POST(req: NextRequest) {
     } = await req.json();
 
     const getImage = async () => {
-      const res = fetch(body.image).then((response) => {
-        return response.blob();
-      });
-      return res;
+      try {
+        const response = await fetch(body.image);
+        const res = await response.blob();
+        imageUrl = `${process.env.BASE_S3_URL}/${body.name.replace(
+          / /g,
+          "-"
+        )}${getFileExtensionFromBlob(res)}`;
+
+        return res;
+      } catch (error) {
+        console.error("Error fetching image:", error);
+        throw error;
+      }
+    };
+
+    const getFileExtensionFromBlob = (blob: Blob) => {
+      const mimeTypeToExtension = {
+        "image/jpeg": ".jpg",
+        "image/png": ".png",
+        "image/gif": ".gif",
+        "image/webp": ".webp",
+        "image/svg+xml": ".svg",
+      };
+
+      return mimeTypeToExtension[blob.type] || "";
+    };
+
+    const putS3Image = async (imageBlob: Blob) => {
+      try {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", imageBlob.type);
+        myHeaders.append("X-Auth-Token", process.env.S3_API_KEY);
+
+        const res = await fetch(imageUrl, {
+          method: "PUT",
+          headers: myHeaders,
+          body: imageBlob,
+        });
+
+        return res;
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        throw error;
+      }
     };
 
     const userImage = await getImage();
-
-    // uploadImageToS3(
-    //   "resume-user-images/images",
-    //   `${body.name}.jpg`,
-    //   userImage,
-    //   "image/jpeg"
-
-    // );
-
-    const putS3Image = async () => {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "image/jpeg");
-      const res = await fetch(
-        `https://k9iq6pknw7.execute-api.us-east-2.amazonaws.com/dev/resume-user-data/${body.name}.jpg`,
-        { method: "PUT", headers: myHeaders, body: userImage }
-      );
-      return res;
-    };
-
-    putS3Image();
+    await putS3Image(userImage);
 
     const result = await prisma.comments.create({
       data: {
         name: body.name,
-        image: body.image,
+        image: imageUrl,
         message: body.message,
         createdAt: body.createdAt,
       },
