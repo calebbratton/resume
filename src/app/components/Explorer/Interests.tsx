@@ -9,8 +9,7 @@ const Interests = () => {
           General
         </div>
         <div className="bg-detailInfoBg px-2 col-span-3">
-          I love coding, climbing, snowboarding, fall weather, music, and my
-          wife (hey babe).
+          I love coding, climbing, snowboarding, fall weather, music, and my wife and daughter.
         </div>
         <div className="bg-detailTitleBg px-2 font-bold text-detailTitle">
           Work History
