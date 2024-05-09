@@ -8,14 +8,14 @@ const Friends = () => (
       <div className="grid grid-cols-4 grid-flow-row gap-x-2 gap-y-4">
         {[
           {
-            name: "Typescript",
-            src: "/typescript.png",
-            link: "https://www.typescriptlang.org/docs/",
-          },
-          {
             name: "Golang",
             src: "/golang.png",
             link: "https://go.dev/doc/",
+          },
+          {
+            name: "Typescript",
+            src: "/typescript.png",
+            link: "https://www.typescriptlang.org/docs/",
           },
           {
             name: "React",
